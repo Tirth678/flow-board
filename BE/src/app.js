@@ -1,8 +1,9 @@
 const express = require('express');
+const connectDB = require('./db/db');
 const app = express();
-app.use(express.json())
-const authController = require('../src/controllers/auth.controller')
+const authRoutes = require('../src/routes/auth.route')
 
-app.use('/api/auth', auth)
+app.use(express.json());
 
+app.use('/api/auth', authRoutes)
 module.exports = app;
