@@ -3,6 +3,8 @@ const bcrypt = require('bcrypt');
 const express = require('express');
 const userModel = require('../models/user.model')
 
+
+// register new user
 async function registerUser(req, res){
     // fetch this data
     const {username, email, password, role='user'} = req.body;
@@ -42,6 +44,8 @@ async function registerUser(req, res){
     })
 }
 
+
+// login existing user
 async function loginUser(req, res){
     try {
         const {username, email, password} = req.body;
@@ -88,4 +92,16 @@ async function loginUser(req, res){
         res.status(500).json({message: "there are some issues in login, come again later!"})
     }
 }
-module.exports = {registerUser, loginUser}
+
+// logout user
+async function logoutUser(req, res){
+    res.clearCookie('token');
+    res.status(200).json({message: "logout successfull"})
+}
+
+// {
+//     "username": "test4",
+//     "email": "email@test4.com",
+//     "password": "abcedede"
+// }
+module.exports = {registerUser, loginUser, logoutUser}
