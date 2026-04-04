@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken');
 const orgModel = require('../models/org.model');
 const { MailtrapClient } = require('mailtrap');
+const userModel = require('../models/user.model');
 
 const mailtrap = new MailtrapClient({
   token: process.env.MAILTRAP_API_KEY, 
@@ -82,6 +83,38 @@ async function getOneOrg(req, res){
 }
 
 async function sendEmail(req, res){
-   
+    try {
+        // Verify token first
+        const authHeader = req.headers.authorization;
+        let token = authHeader && authHeader.split(' ')[1];
+        
+        if(!token && req.cookies){
+            token = req.cookies.token;
+        }
+
+        if(!token){
+            return res.status(401).json({message: "Invalid access - no token provided"})
+        }
+
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+
+        const { email, subject, text } = req.body;
+        
+        if(!email){
+            return res.status(400).json({message: "email is required"})
+        }
+
+        const response = await mailtrap.send({
+            from: { name: "Mailtrap Test", email: "sender@example.com" },
+            to: [{ email: email }],
+            subject: subject || "Hello from Mailtrap Node.js",
+            text: text || "Plain text body",
+        });
+
+        res.status(200).json({message: "email sent successfully", response})
+    } catch(error) {
+        console.error('Email sending error:', error.message);
+        res.status(500).json({message: "error sending email", error: error.message})
+    }
 }
 module.exports = {createOrg, getAllOrgs, getOneOrg, sendEmail}
