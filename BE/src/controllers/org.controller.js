@@ -1,5 +1,10 @@
 const jwt = require('jsonwebtoken');
 const orgModel = require('../models/org.model');
+const { MailtrapClient } = require('mailtrap');
+
+const mailtrap = new MailtrapClient({
+  token: process.env.MAILTRAP_API_KEY, 
+});
 
 async function createOrg(req, res){
     // Try to get token from Authorization header first, then from cookies
@@ -45,4 +50,38 @@ async function createOrg(req, res){
     res.status(401).json({message: "error in creating new organisation, come back later", error: error.message})
   }
 }
-module.exports = {createOrg}
+
+
+// fetch all orgs from db
+async function getAllOrgs(req, res){
+    const orgs = await orgModel
+    .find() // find
+    .limit(5) // limit upto 5 names to balance load
+    .populate("orgName", "description") // arrange
+
+    res.status(201).json({orgs: orgs,
+        message: "all organisations fecthed successfully"
+    })
+}
+async function getOneOrg(req, res){
+    try {
+        const { id } = req.params;
+        
+        const org = await orgModel.findById(id);
+
+        if(!org){
+            return res.status(404).json({message: "organisation not found"})
+        }
+
+        res.status(200).json({org: org,
+            message: "organisation found"
+        })
+    } catch(error) {
+        res.status(500).json({message: "error fetching organisation", error: error.message})
+    }
+}
+
+async function sendEmail(req, res){
+   
+}
+module.exports = {createOrg, getAllOrgs, getOneOrg, sendEmail}

@@ -13,6 +13,7 @@
   "description": "To be updated later on",
   "dependencies": {
     "bcrypt": "^6.0.0",
-    "cookie-parser": "^1.4.7"
+    "cookie-parser": "^1.4.7",
+    "mailtrap": "^4.5.1"
   }
 }
