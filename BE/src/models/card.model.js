@@ -1,25 +1,29 @@
 const mongoose = require('mongoose');
 
-const boardSchema = mongoose.Schema({
-    name: {
+const cardSchema = mongoose.Schema({
+    title: {
         type: String,
         required: true
     },
     description: {
         type: String,
     },
-    orgId: {
+    status: {
+        type: String,
+        enum: ['up_next', 'in_progress', 'done'],
+        default: 'up_next' // keep task by default as up_next
+    },
+    boardId: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'org',
+        ref: 'board',
         required: true
     },
     createdBy: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'user',
         required: true
-    }
+    },
 }, {timestamps: true})
 
-const boardModel = mongoose.model("board", boardSchema);
-
-module.exports = boardModel
+const cardModel = mongoose.model('card', cardSchema);
+module.exports = cardModel

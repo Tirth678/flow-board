@@ -10,4 +10,5 @@ app.use(cookieParser());
 
 app.use('/api/auth', authRoutes)
 app.use('/api/org', orgRoutes)
+app.use('api/org/board', orgRoutes)
 module.exports = app;
