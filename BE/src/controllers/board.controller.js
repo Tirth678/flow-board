@@ -1,5 +1,4 @@
 const boardModel = require('../models/board.model')
-const userModel = require('../models/user.model');
 const orgMemberModel = require('../models/orgMember.model');
 const jwt = require('jsonwebtoken');
 
