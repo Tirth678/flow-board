@@ -2,6 +2,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const express = require('express');
 const userModel = require('../models/user.model')
+const config = require('../config/config')
 
 
 // register new user
@@ -34,7 +35,7 @@ async function registerUser(req, res){
     const token = jwt.sign({
         id: user._id,
         role: user.role,
-    }, process.env.JWT_SECRET,
+    }, config.JWT_SECRET,
     
     {expiresIn: '10m'}
 )
@@ -82,7 +83,7 @@ async function loginUser(req, res){
         const token = jwt.sign({
             id: user._id,
             role: user.role
-        }, process.env.JWT_SECRET);
+        }, config.JWT_SECRET);
 
         res.cookie("token", token)
 

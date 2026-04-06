@@ -2,6 +2,7 @@ const boardModel = require('../models/board.model');
 const orgMemberModel = require('../models/orgMember.model');
 const cardModel = require('../models/card.model');
 const jwt = require('jsonwebtoken');
+const config = require('../config/config')
 
 async function createCard(req, res){
     try {
@@ -16,7 +17,7 @@ async function createCard(req, res){
             return res.status(401).json({message: "Invalid access - no token provided"})
         }
 
-        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        const decoded = jwt.verify(token, config.JWT_SECRET);
 
         const {title, description} = req.body;
         const {boardId} = req.params
@@ -64,7 +65,7 @@ async function getCards(req, res){
             return res.status(401).json({message: "Invalid access - no token provided"})
         }
 
-        const decoded = jwt.verify(token, process.env.JWT_SECRET)
+        const decoded = jwt.verify(token, config.JWT_SECRET)
 
         const {boardId} = req.params;
 
@@ -102,7 +103,7 @@ async function updateCardStatus(req, res){
             return res.status(401).json({message: "Invalid access - no token provided"})
         }
 
-        const decoded = jwt.verify(token, process.env.JWT_SECRET)
+        const decoded = jwt.verify(token, config.JWT_SECRET)
 
         const {cardId} = req.params
         const {status} = req.body
@@ -142,7 +143,7 @@ async function deleteCard(req, res){
             return res.status(401).json({message: "Invalid access - no token provided"})
         }
 
-        const decoded = jwt.verify(token, process.env.JWT_SECRET)
+        const decoded = jwt.verify(token, config.JWT_SECRET)
 
         const {cardId} = req.params;
 

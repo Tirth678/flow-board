@@ -4,6 +4,7 @@ const userModel = require('../models/user.model');
 const orgMemberModel = require('../models/orgMember.model');
 const { MailtrapClient } = require('mailtrap');
 const OrgMember = require('../models/orgMember.model');
+const config = require('../config/config')
 
 const mailtrap = new MailtrapClient({
   token: process.env.MAILTRAP_API_KEY, 
@@ -24,7 +25,7 @@ async function createOrg(req, res){
 
   try{
 
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const decoded = jwt.verify(token, config.JWT_SECRET);
 
     const { orgName, description } = req.body;
 
@@ -98,7 +99,7 @@ async function inviteUser(req, res){
             return res.status(401).json({message: "Invalid access - no token provided"})
         }
 
-        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        const decoded = jwt.verify(token, config.JWT_SECRET);
 
         // Step 2: Get org ID from params and username from body
         const { orgId } = req.params;

@@ -1,6 +1,7 @@
 const boardModel = require('../models/board.model')
 const orgMemberModel = require('../models/orgMember.model');
 const jwt = require('jsonwebtoken');
+const config = require('../config/config')
 
 async function createBoard(req, res){
     try {
@@ -16,7 +17,7 @@ async function createBoard(req, res){
             return res.status(401).json({message: "Invalid access - no token provided"})
         }
 
-        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        const decoded = jwt.verify(token, config.JWT_SECRET);
 
         // Step 2: Get data from request
         const {name, description} = req.body;
@@ -64,7 +65,7 @@ async function listBoards(req, res){
             return res.status(401).json({message: "Invalid access - no token provided"})
         }
 
-        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        const decoded = jwt.verify(token, config.JWT_SECRET);
 
         // Step 2: Get org ID from params
         const {orgId} = req.params;
@@ -99,7 +100,7 @@ async function deleteBoard(req, res){
             return res.status(401).json({message: "Invalid access - no token provided"})
         }
 
-        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        const decoded = jwt.verify(token, config.JWT_SECRET);
 
         // Step 2: Get board ID from params
         const {boardId} = req.params;
