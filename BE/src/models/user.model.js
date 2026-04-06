@@ -1,3 +1,4 @@
+// defining schema for user and auth managment
 const mongoose = require('mongoose');
 
 const userSchema = mongoose.Schema({
@@ -19,7 +20,7 @@ const userSchema = mongoose.Schema({
     
     role: {
         type: String,
-        enum: ['user', 'admin'],
+        enum: ['user', 'admin'], // can be only 2 values user and string
         default: 'user'
     },
 })
