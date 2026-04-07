@@ -67,10 +67,10 @@ async function loginUser(req, res){
         })
         // if user or user password not found
         if(!user){
-            res.status(401).json({message: "invalid credintials"})
+            res.status(401).json({message: "user not found in db"})
         }
         if(!user.password){
-            res.status(500).json({message: "password not found"})
+            res.status(500).json({message: "password dosen't match"})
         }
 
         // is password valid?
@@ -79,7 +79,7 @@ async function loginUser(req, res){
             res.status(401).json({message: "invalid password"})
         }
 
-        // if everything success then assign a token
+        // if everything success then assign a token(in cookie)
         const token = jwt.sign({
             id: user._id,
             role: user.role
@@ -106,6 +106,7 @@ async function logoutUser(req, res){
 // {
 //     "username": "test4",
 //     "email": "email@test4.com",
-//     "password": "abcedede"
+//     "password": "abcedede",
+//     "role": "admin"
 // }
 module.exports = {registerUser, loginUser, logoutUser}

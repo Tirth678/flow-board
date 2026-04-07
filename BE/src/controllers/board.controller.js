@@ -5,7 +5,7 @@ const config = require('../config/config')
 
 async function createBoard(req, res){
     try {
-        // Step 1: Verify token
+        // Step 1: Verify board
         const authHeader = req.headers.authorization;
         let token = authHeader && authHeader.split(' ')[1];
         
@@ -23,8 +23,8 @@ async function createBoard(req, res){
         const {name, description} = req.body;
         const {orgId} = req.params;
 
-        if(!name){
-            return res.status(400).json({message: "board name is required"})
+        if(!name && !description){
+            return res.status(400).json({message: "board name and description name is required"})
         }
 
         // Step 3: Check if user is a member of the org
@@ -32,6 +32,7 @@ async function createBoard(req, res){
             orgId: orgId,
             userId: decoded.id
         })
+
         if(!membership){
             return res.status(403).json({message: "user is not a member of this organisation"})
         }
@@ -41,7 +42,7 @@ async function createBoard(req, res){
             name,
             description,
             orgId,
-            createdBy: decoded.id
+            createdBy: decoded.id // user id (who created it)
         })
 
         res.status(201).json({message: "board created successfully", board})
@@ -72,6 +73,7 @@ async function listBoards(req, res){
 
         // Step 3: Check if user is a member of the org
         const membership = await orgMemberModel.findOne({orgId, userId: decoded.id})
+        // orgId and userId is required to check if user exist in orgMember model
         if(!membership){
             return res.status(403).json({message: "not a member of this organisation"})
         }
@@ -103,7 +105,7 @@ async function deleteBoard(req, res){
         const decoded = jwt.verify(token, config.JWT_SECRET);
 
         // Step 2: Get board ID from params
-        const {boardId} = req.params;
+        const { boardId } = req.params;
 
         //  Find the board
         const board = await boardModel.findById(boardId);

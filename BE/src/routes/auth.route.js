@@ -4,7 +4,7 @@ const {registerUserValidation, loginUserValidation} = require('../middlewares/va
 
 const router = express.Router();
 
-router.post('/register', registerUserValidation, authController.registerUser);
+router.post('/register', registerUserValidation, authController.registerUser); // first registerUserValidation will be called
 router.post('/login', loginUserValidation, authController.loginUser);
 router.post('/logout', authController.logoutUser)
 

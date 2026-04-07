@@ -34,7 +34,7 @@ async function createOrg(req, res){
     }
 
     if(!orgName){
-        return res.status(409).json({message: "orgName is required"})
+        return res.status(409).json({message: "organisation name is required"})
     }
     
     const org = await orgModel.create({
@@ -62,7 +62,7 @@ async function getAllOrgs(req, res){
     const orgs = await orgModel
     .find() // find
     .limit(5) // limit upto 5 names to balance load
-    .populate("orgName", "description") // arrange
+    .populate("orgName", "description") // get info in this format
 
     res.status(201).json({orgs: orgs,
         message: "all organisations fecthed successfully"
@@ -81,6 +81,7 @@ async function getOneOrg(req, res){
         res.status(200).json({org: org,
             message: "organisation found"
         })
+
     } catch(error) {
         res.status(500).json({message: "error fetching organisation", error: error.message})
     }
@@ -153,6 +154,7 @@ async function inviteUser(req, res){
         res.status(500).json({message: "error adding user to organisation", error: error.message})
     }
 };
+
 async function listOrgUser(req, res){
     try {
         const found = await orgMemberModel.find({orgId: req.params.id})
