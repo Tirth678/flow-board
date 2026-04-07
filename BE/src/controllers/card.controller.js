@@ -35,6 +35,7 @@ async function createCard(req, res){
             orgId: board.orgId,
             userId: decoded.id
         });
+
         if(!membership){
             return res.status(403).json({message: 'not a member of this organisation'})
         }
@@ -45,7 +46,9 @@ async function createCard(req, res){
             boardId,
             createdBy: decoded.id
         })
+
         res.status(201).json({message: "card created successfully", card})
+        
     } catch(error) {
         console.error('Error creating card:', error.message);
         res.status(500).json({message: "error creating card", error: error.message})
