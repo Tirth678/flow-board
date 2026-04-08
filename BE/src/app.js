@@ -6,12 +6,10 @@ const authRoutes = require('../src/routes/auth.route');
 const orgRoutes = require('../src/routes/org.route');
 const boardRoutes = require('../src/routes/board.route');
 const cardRoutes = require('../src/routes/card.route');
-const cookieParser = require('cookie-parser')
 
 app.use(express.json());
 app.use(cookieParser());
 app.use(morgan('dev')); // will show which method on which API all details in dev mode
-app.use(cookieParser())
 
 app.use('/api/auth', authRoutes)
 app.use('/api/org', orgRoutes)

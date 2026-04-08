@@ -2,6 +2,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const userModel = require('../models/user.model')
 const config = require('../config/config')
+const sessionModel = require('../models/session.model')
 
 
 // register new user
@@ -31,19 +32,21 @@ async function registerUser(req, res){
         })
 
         // Generate tokens
-        const accessToken = jwt.sign({
+        const accessToken = jwt.sign({ // stored in memory not localStorage or cookies
+            // this will behave as normal token for 15 mins
             id: user._id,
             role: user.role,
         }, config.JWT_SECRET, {expiresIn: '15m'})
 
         const refreshToken = jwt.sign({
+            // this will generate new accessToken after 15 mins(this will add extra layer of security)
             id: user._id,
             role: user.role,
         }, config.JWT_SECRET, {expiresIn: '7d'})
 
         // Store refresh token in cookie
         res.cookie("refreshToken", refreshToken, {
-            httpOnly: true,
+            httpOnly: true, // client side cannot read this JS
             secure: true,
             sameSite: 'strict',
             maxAge: 7 * 24 * 60 * 60 * 1000 
@@ -88,21 +91,33 @@ async function loginUser(req, res){
         if(!isPasswordValid){
             return res.status(401).json({message: "invalid password"})
         }
-
-        // Generate tokens
-        const accessToken = jwt.sign({
-            id: user._id,
-            role: user.role
-        }, config.JWT_SECRET, {
-            expiresIn: '15m'
-        });
-
+    
+        // refresh token pehele create hoga
         const refreshToken = jwt.sign({
             id: user._id,
             role: user.role
         }, config.JWT_SECRET, {
             expiresIn: '7d'
         });
+
+        const refreshTokenHash = await bcrypt.hash(refreshToken, 10)
+        const session = await sessionModel.create({
+            user: user._id,
+            refreshTokenHash: refreshTokenHash,
+            ip: req.ip,
+            userAgent: req.headers['user-agent']
+        })
+
+        // Generate tokens
+        const accessToken = jwt.sign({
+            id: user._id,
+            role: user.role,
+            sessionId: session._id
+        }, config.JWT_SECRET, {
+            expiresIn: '15m'
+        });
+
+    
 
         // Store refresh token in httpOnly cookie
         res.cookie("refreshToken", refreshToken, {
@@ -115,7 +130,6 @@ async function loginUser(req, res){
         res.status(200).json({
             message: "user login successful",
             user: {id: user._id, role: user.role},
-            accessToken
         })
 
     } catch (error) {
@@ -126,7 +140,27 @@ async function loginUser(req, res){
 
 // logout user
 async function logoutUser(req, res){
-    res.clearCookie('refreshToken');
+    const refreshToken = req.cookies.refreshToken;
+    if(!refreshToken){
+        return res.status(400).json({
+            message: 'refresh token not found'
+        })
+    }
+    const refreshTokenHash = bcrypt.hash(refreshToken, 10);
+    const session = await sessionModel.findOne({
+        refreshToken,
+        revoked: false
+    })
+
+    if(!session){
+        return res.status(400).json({
+            message: 'invalid refresh token'
+        })
+    }
+    session.revoked = true;
+    await session.save()
+    req.clearCookie('refreshToken')
+
     res.status(200).json({message: "logout successful"})
 }
 
@@ -173,6 +207,7 @@ async function refreshToken(req, res){
         res.status(403).json({message: "invalid or expired refresh token"})
     }
 }
+
 
 
 module.exports = {registerUser, loginUser, logoutUser, refreshToken}
