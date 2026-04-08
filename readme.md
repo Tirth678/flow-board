@@ -1,6 +1,6 @@
 # 📋 Flow Board - Collaborative Project Management Platform
 
-## 🎯 Project Description
+##  Project Description
 
 **Flow Board** is a full-stack collaborative project management application designed to help teams organize, track, and manage their workflow efficiently. Inspired by modern productivity tools like Trello, Asana, and Monday.com, Flow Board combines intuitive Kanban-style boards with powerful team collaboration features. 
 
@@ -16,7 +16,7 @@ Whether you're managing a startup project, coordinating a development team, or o
 
 ---
 
-## 🛠️ Technologies & Stack
+##  Technologies & Stack
 
 ### Backend Architecture
 - **Runtime Environment**: Node.js (v14+)
@@ -46,9 +46,9 @@ Whether you're managing a startup project, coordinating a development team, or o
 
 ---
 
-## ✨ Core Features
+##  Core Features
 
-### 1️⃣ User Authentication & Account Management
+### 1️ User Authentication & Account Management
 - **Secure Registration**: Email-based signup with password strength validation
 - **Login System**: JWT-based authentication with token refresh capability
 - **Password Security**: Bcrypt hashing with salt rounds for maximum security
@@ -64,7 +64,7 @@ Whether you're managing a startup project, coordinating a development team, or o
 - Automatic token refresh for seamless user experience
 - Password hashing with bcrypt (10 salt rounds)
 
-### 2️⃣ Organization Management
+### 2️ Organization Management
 - **Organization Creation**: Users can create multiple organizations
 - **Team Building**: Add and manage team members within organizations
 - **Role-Based Access**: Admin, Editor, and Viewer roles
@@ -80,7 +80,7 @@ Whether you're managing a startup project, coordinating a development team, or o
 - Role-based authorization checks on all operations
 - Organization-level data isolation
 
-### 3️⃣ Board Management (Kanban Boards)
+### 3️ Board Management (Kanban Boards)
 - **Board Creation**: Create unlimited boards within organizations
 - **Customizable Columns**: Define workflow stages (To Do, In Progress, Done, etc.)
 - **Board Description**: Add detailed board descriptions and guidelines
@@ -96,7 +96,7 @@ Whether you're managing a startup project, coordinating a development team, or o
 - Membership verification before board access
 - Admin-only deletion with proper authorization checks
 
-### 4️⃣ Card Management (Task Management)
+### 4️ Card Management (Task Management)
 - **Card Creation**: Create tasks/cards on boards with title and description
 - **Card Status Tracking**: Three-state workflow (up_next, in_progress, done)
 - **Card Assignment**: Assign cards to team members
@@ -912,46 +912,6 @@ Solution: Ensure frontend and backend are on correct ports
 
 [Video Demo Coming Soon]
 
-A comprehensive walkthrough video will demonstrate:
-
-**Part 1: Authentication (2 min)**
-- User registration process
-- Email verification
-- Login and logout
-- Password recovery
-
-**Part 2: Organization Setup (3 min)**
-- Creating organizations
-- Inviting team members
-- Managing roles and permissions
-- Organization settings
-
-**Part 3: Board Management (4 min)**
-- Creating Kanban boards
-- Customizing columns
-- Board sharing
-- Board settings
-
-**Part 4: Card Operations (3 min)**
-- Creating and editing cards
-- Drag-and-drop between columns
-- Card details and metadata
-- Card assignment
-
-**Part 5: Collaboration (2 min)**
-- Team collaboration features
-- Comments and mentions
-- Real-time updates
-- Activity tracking
-
-**Part 6: Mobile Experience (2 min)**
-- Mobile responsiveness
-- Touch interactions
-- Mobile-optimized UI
-- Performance
-
-**Total Duration**: ~16 minutes
-
 ---
 
 ## 🤝 Contributing
@@ -981,20 +941,6 @@ We welcome contributions! Here's how to get involved:
 - Documentation
 - Testing
 - Performance optimization
-
----
-
-## 📄 License
-
-This project is licensed under the ISC License - see the LICENSE file for details.
-
-```
-ISC License
-
-Copyright (c) 2024 Flow Board Contributors
-
-Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
-```
 
 ---
 
@@ -1048,14 +994,8 @@ Have an idea? We'd love to hear it!
 
 Flow Board aims to become the go-to project management solution for teams of all sizes. Our roadmap includes:
 
-- **Q2 2024**: Mobile app launch
-- **Q3 2024**: Advanced analytics and reporting
-- **Q4 2024**: AI-powered features
-- **2025**: Enterprise features and integrations
-
 ---
 
-**Built with ❤️ by the Flow Board Team**
+**Built with ❤️ by Tirth S Pandya**
 
-*Last Updated: April 8, 2024*
 *Version: 1.8.3*
