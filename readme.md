@@ -142,7 +142,7 @@ up_next → in_progress → done
 
 ## 🏗️ The Build Process: How I Built It
 
-### Phase 1: Backend Foundation ✅ (Completed)
+### Phase 1: Backend Foundation (Completed)
 
 **Objectives Achieved**:
 - Set up Express.js server with middleware pipeline
@@ -168,7 +168,7 @@ mongoose.connect(process.env.MONGO_URI)
 
 ---
 
-### Phase 2: Database Schema Design ✅ (Completed)
+### Phase 2: Database Schema Design (Completed)
 
 **Models Created**:
 
@@ -218,7 +218,7 @@ mongoose.connect(process.env.MONGO_URI)
 
 ---
 
-### Phase 3: Authentication System ✅ (Completed)
+### Phase 3: Authentication System (Completed)
 
 **Implementation**:
 - JWT token generation on login
@@ -252,7 +252,7 @@ function verifyToken(req, res, next) {
 
 ---
 
-### Phase 4: API Endpoints Development ✅ (Completed)
+### Phase 4: API Endpoints Development (Completed)
 
 **Authentication Routes** (`/api/auth`)
 - `POST /register` - User registration with validation
@@ -289,7 +289,7 @@ function verifyToken(req, res, next) {
 
 ---
 
-### Phase 5: Validation & Middleware ✅ (Completed)
+### Phase 5: Validation & Middleware (Completed)
 
 **Validation Middleware**:
 - Email format validation
@@ -494,7 +494,7 @@ User (1) ──── (Many) Organization
 
 ---
 
-## 🎨 Discover Flow Board
+## Discover Flow Board
 
 ### Who Should Use Flow Board?
 
@@ -533,12 +533,12 @@ User (1) ──── (Many) Organization
    - Time management
 
 ### Competitive Advantages
-- ✅ Lightweight and fast
-- ✅ Easy to set up and deploy
-- ✅ Customizable workflows
-- ✅ Team collaboration features
-- ✅ Role-based access control
-- ✅ Open-source foundation
+-  Lightweight and fast
+-  Easy to set up and deploy
+-  Customizable workflows
+-  Team collaboration features
+-  Role-based access control
+-  Open-source foundation
 
 ---
 
@@ -546,44 +546,44 @@ User (1) ──── (Many) Organization
 
 ### Current Development Status
 
-**Backend**: 90% Complete ✅
-- ✅ All core APIs implemented
-- ✅ Authentication system working
-- ✅ Database schemas finalized
-- ✅ Error handling in place
-- 🔄 Testing and optimization ongoing
+**Backend**: 90% Complete 
+-  All core APIs implemented
+-  Authentication system working
+-  Database schemas finalized
+-  Error handling in place
+-  Testing and optimization ongoing
 
 **Frontend**: 20% Complete 🔄
-- ✅ HTML structure created
-- ✅ CSS framework initialized
-- 🔄 JavaScript integration in progress
-- 📋 UI components pending
-- 📋 Responsive design pending
+-  HTML structure created
+-  CSS framework initialized
+-  JavaScript integration in progress
+-  UI components pending
+-  Responsive design pending
 
-**Database**: 100% Complete ✅
-- ✅ All schemas designed
-- ✅ Relationships established
-- ✅ Indexes created
-- ✅ Data validation rules set
+**Database**: 100% Complete 
+-  All schemas designed
+-  Relationships established
+-  Indexes created
+-  Data validation rules set
 
 **Overall Project**: 55% Complete 🚀
 
 ### Milestones Achieved
-- ✅ Backend API fully functional
-- ✅ Database schema designed and implemented
-- ✅ Authentication system working
-- ✅ Organization and team management
-- ✅ Board and card management endpoints
-- ✅ Role-based access control
-- ✅ Error handling and validation
+-  Backend API fully functional
+-  Database schema designed and implemented
+-  Authentication system working
+-  Organization and team management
+-  Board and card management endpoints
+-  Role-based access control
+-  Error handling and validation
 
 ### Upcoming Milestones
-- 🔄 Complete responsive frontend UI (2-3 weeks)
-- 🔄 Implement drag-and-drop functionality (1-2 weeks)
-- 🔄 Add real-time collaboration features (2-3 weeks)
-- 🔄 Mobile app optimization (1-2 weeks)
-- 🔄 Testing and quality assurance (2 weeks)
-- 🔄 Deployment and production setup (1 week)
+-  Complete responsive frontend UI (2-3 weeks)
+-  Implement drag-and-drop functionality (1-2 weeks)
+-  Add real-time collaboration features (2-3 weeks)
+-  Mobile app optimization (1-2 weeks)
+-  Testing and quality assurance (2 weeks)
+-  Deployment and production setup (1 week)
 
 ### Timeline Estimate
 - **Current Phase**: Frontend Development (Weeks 1-4)
@@ -593,7 +593,7 @@ User (1) ──── (Many) Organization
 
 ---
 
-## 🚀 How Can It Be Improved
+## How Can It Be Improved
 
 ### Short-term Improvements (1-2 weeks)
 
@@ -699,7 +699,7 @@ User (1) ──── (Many) Organization
 
 ---
 
-## 🚀 Running the Project
+## Running the Project
 
 ### Prerequisites
 - **Node.js**: v14.0.0 or higher
@@ -914,7 +914,7 @@ Solution: Ensure frontend and backend are on correct ports
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! Here's how to get involved:
 
@@ -944,7 +944,7 @@ We welcome contributions! Here's how to get involved:
 
 ---
 
-## 💬 Support & Contact
+## Support & Contact
 
 ### Getting Help
 - **Documentation**: Check README.md and inline code comments
@@ -968,7 +968,7 @@ Have an idea? We'd love to hear it!
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Inspired by Trello, Asana, and Monday.com
 - Built with Express.js and MongoDB
@@ -977,7 +977,7 @@ Have an idea? We'd love to hear it!
 
 ---
 
-## 📊 Project Statistics
+## Project Statistics
 
 - **Lines of Code**: 2,000+
 - **API Endpoints**: 15+
@@ -990,7 +990,7 @@ Have an idea? We'd love to hear it!
 
 ---
 
-## 🎯 Future Vision
+## Future Vision
 
 Flow Board aims to become the go-to project management solution for teams of all sizes. Our roadmap includes:
 
