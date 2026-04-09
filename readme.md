@@ -1,6 +1,6 @@
 # 📋 Flow Board - Collaborative Project Management Platform
 
-## 🎯 Project Description
+##  Project Description
 
 **Flow Board** is a full-stack collaborative project management application designed to help teams organize, track, and manage their workflow efficiently. Inspired by modern productivity tools like Trello, Asana, and Monday.com, Flow Board combines intuitive Kanban-style boards with powerful team collaboration features. 
 
@@ -16,7 +16,7 @@ Whether you're managing a startup project, coordinating a development team, or o
 
 ---
 
-## 🛠️ Technologies & Stack
+##  Technologies & Stack
 
 ### Backend Architecture
 - **Runtime Environment**: Node.js (v14+)
@@ -46,9 +46,9 @@ Whether you're managing a startup project, coordinating a development team, or o
 
 ---
 
-## ✨ Core Features
+##  Core Features
 
-### 1️⃣ User Authentication & Account Management
+### 1️ User Authentication & Account Management
 - **Secure Registration**: Email-based signup with password strength validation
 - **Login System**: JWT-based authentication with token refresh capability
 - **Password Security**: Bcrypt hashing with salt rounds for maximum security
@@ -64,7 +64,7 @@ Whether you're managing a startup project, coordinating a development team, or o
 - Automatic token refresh for seamless user experience
 - Password hashing with bcrypt (10 salt rounds)
 
-### 2️⃣ Organization Management
+### 2️ Organization Management
 - **Organization Creation**: Users can create multiple organizations
 - **Team Building**: Add and manage team members within organizations
 - **Role-Based Access**: Admin, Editor, and Viewer roles
@@ -80,7 +80,7 @@ Whether you're managing a startup project, coordinating a development team, or o
 - Role-based authorization checks on all operations
 - Organization-level data isolation
 
-### 3️⃣ Board Management (Kanban Boards)
+### 3️ Board Management (Kanban Boards)
 - **Board Creation**: Create unlimited boards within organizations
 - **Customizable Columns**: Define workflow stages (To Do, In Progress, Done, etc.)
 - **Board Description**: Add detailed board descriptions and guidelines
@@ -96,7 +96,7 @@ Whether you're managing a startup project, coordinating a development team, or o
 - Membership verification before board access
 - Admin-only deletion with proper authorization checks
 
-### 4️⃣ Card Management (Task Management)
+### 4️ Card Management (Task Management)
 - **Card Creation**: Create tasks/cards on boards with title and description
 - **Card Status Tracking**: Three-state workflow (up_next, in_progress, done)
 - **Card Assignment**: Assign cards to team members
@@ -142,7 +142,7 @@ up_next → in_progress → done
 
 ## 🏗️ The Build Process: How I Built It
 
-### Phase 1: Backend Foundation ✅ (Completed)
+### Phase 1: Backend Foundation (Completed)
 
 **Objectives Achieved**:
 - Set up Express.js server with middleware pipeline
@@ -168,7 +168,7 @@ mongoose.connect(process.env.MONGO_URI)
 
 ---
 
-### Phase 2: Database Schema Design ✅ (Completed)
+### Phase 2: Database Schema Design (Completed)
 
 **Models Created**:
 
@@ -218,7 +218,7 @@ mongoose.connect(process.env.MONGO_URI)
 
 ---
 
-### Phase 3: Authentication System ✅ (Completed)
+### Phase 3: Authentication System (Completed)
 
 **Implementation**:
 - JWT token generation on login
@@ -252,7 +252,7 @@ function verifyToken(req, res, next) {
 
 ---
 
-### Phase 4: API Endpoints Development ✅ (Completed)
+### Phase 4: API Endpoints Development (Completed)
 
 **Authentication Routes** (`/api/auth`)
 - `POST /register` - User registration with validation
@@ -289,7 +289,7 @@ function verifyToken(req, res, next) {
 
 ---
 
-### Phase 5: Validation & Middleware ✅ (Completed)
+### Phase 5: Validation & Middleware (Completed)
 
 **Validation Middleware**:
 - Email format validation
@@ -494,7 +494,7 @@ User (1) ──── (Many) Organization
 
 ---
 
-## 🎨 Discover Flow Board
+## Discover Flow Board
 
 ### Who Should Use Flow Board?
 
@@ -533,12 +533,12 @@ User (1) ──── (Many) Organization
    - Time management
 
 ### Competitive Advantages
-- ✅ Lightweight and fast
-- ✅ Easy to set up and deploy
-- ✅ Customizable workflows
-- ✅ Team collaboration features
-- ✅ Role-based access control
-- ✅ Open-source foundation
+-  Lightweight and fast
+-  Easy to set up and deploy
+-  Customizable workflows
+-  Team collaboration features
+-  Role-based access control
+-  Open-source foundation
 
 ---
 
@@ -546,44 +546,44 @@ User (1) ──── (Many) Organization
 
 ### Current Development Status
 
-**Backend**: 90% Complete ✅
-- ✅ All core APIs implemented
-- ✅ Authentication system working
-- ✅ Database schemas finalized
-- ✅ Error handling in place
-- 🔄 Testing and optimization ongoing
+**Backend**: 90% Complete 
+-  All core APIs implemented
+-  Authentication system working
+-  Database schemas finalized
+-  Error handling in place
+-  Testing and optimization ongoing
 
 **Frontend**: 20% Complete 🔄
-- ✅ HTML structure created
-- ✅ CSS framework initialized
-- 🔄 JavaScript integration in progress
-- 📋 UI components pending
-- 📋 Responsive design pending
+-  HTML structure created
+-  CSS framework initialized
+-  JavaScript integration in progress
+-  UI components pending
+-  Responsive design pending
 
-**Database**: 100% Complete ✅
-- ✅ All schemas designed
-- ✅ Relationships established
-- ✅ Indexes created
-- ✅ Data validation rules set
+**Database**: 100% Complete 
+-  All schemas designed
+-  Relationships established
+-  Indexes created
+-  Data validation rules set
 
 **Overall Project**: 55% Complete 🚀
 
 ### Milestones Achieved
-- ✅ Backend API fully functional
-- ✅ Database schema designed and implemented
-- ✅ Authentication system working
-- ✅ Organization and team management
-- ✅ Board and card management endpoints
-- ✅ Role-based access control
-- ✅ Error handling and validation
+-  Backend API fully functional
+-  Database schema designed and implemented
+-  Authentication system working
+-  Organization and team management
+-  Board and card management endpoints
+-  Role-based access control
+-  Error handling and validation
 
 ### Upcoming Milestones
-- 🔄 Complete responsive frontend UI (2-3 weeks)
-- 🔄 Implement drag-and-drop functionality (1-2 weeks)
-- 🔄 Add real-time collaboration features (2-3 weeks)
-- 🔄 Mobile app optimization (1-2 weeks)
-- 🔄 Testing and quality assurance (2 weeks)
-- 🔄 Deployment and production setup (1 week)
+-  Complete responsive frontend UI (2-3 weeks)
+-  Implement drag-and-drop functionality (1-2 weeks)
+-  Add real-time collaboration features (2-3 weeks)
+-  Mobile app optimization (1-2 weeks)
+-  Testing and quality assurance (2 weeks)
+-  Deployment and production setup (1 week)
 
 ### Timeline Estimate
 - **Current Phase**: Frontend Development (Weeks 1-4)
@@ -593,7 +593,7 @@ User (1) ──── (Many) Organization
 
 ---
 
-## 🚀 How Can It Be Improved
+## How Can It Be Improved
 
 ### Short-term Improvements (1-2 weeks)
 
@@ -699,7 +699,7 @@ User (1) ──── (Many) Organization
 
 ---
 
-## 🚀 Running the Project
+## Running the Project
 
 ### Prerequisites
 - **Node.js**: v14.0.0 or higher
@@ -912,49 +912,9 @@ Solution: Ensure frontend and backend are on correct ports
 
 [Video Demo Coming Soon]
 
-A comprehensive walkthrough video will demonstrate:
-
-**Part 1: Authentication (2 min)**
-- User registration process
-- Email verification
-- Login and logout
-- Password recovery
-
-**Part 2: Organization Setup (3 min)**
-- Creating organizations
-- Inviting team members
-- Managing roles and permissions
-- Organization settings
-
-**Part 3: Board Management (4 min)**
-- Creating Kanban boards
-- Customizing columns
-- Board sharing
-- Board settings
-
-**Part 4: Card Operations (3 min)**
-- Creating and editing cards
-- Drag-and-drop between columns
-- Card details and metadata
-- Card assignment
-
-**Part 5: Collaboration (2 min)**
-- Team collaboration features
-- Comments and mentions
-- Real-time updates
-- Activity tracking
-
-**Part 6: Mobile Experience (2 min)**
-- Mobile responsiveness
-- Touch interactions
-- Mobile-optimized UI
-- Performance
-
-**Total Duration**: ~16 minutes
-
 ---
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! Here's how to get involved:
 
@@ -984,21 +944,7 @@ We welcome contributions! Here's how to get involved:
 
 ---
 
-## 📄 License
-
-This project is licensed under the ISC License - see the LICENSE file for details.
-
-```
-ISC License
-
-Copyright (c) 2024 Flow Board Contributors
-
-Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
-```
-
----
-
-## 💬 Support & Contact
+## Support & Contact
 
 ### Getting Help
 - **Documentation**: Check README.md and inline code comments
@@ -1022,7 +968,7 @@ Have an idea? We'd love to hear it!
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Inspired by Trello, Asana, and Monday.com
 - Built with Express.js and MongoDB
@@ -1031,7 +977,7 @@ Have an idea? We'd love to hear it!
 
 ---
 
-## 📊 Project Statistics
+## Project Statistics
 
 - **Lines of Code**: 2,000+
 - **API Endpoints**: 15+
@@ -1044,18 +990,12 @@ Have an idea? We'd love to hear it!
 
 ---
 
-## 🎯 Future Vision
+## Future Vision
 
 Flow Board aims to become the go-to project management solution for teams of all sizes. Our roadmap includes:
 
-- **Q2 2024**: Mobile app launch
-- **Q3 2024**: Advanced analytics and reporting
-- **Q4 2024**: AI-powered features
-- **2025**: Enterprise features and integrations
-
 ---
 
-**Built with ❤️ by the Flow Board Team**
+**Built with ❤️ by Tirth S Pandya**
 
-*Last Updated: April 8, 2024*
 *Version: 1.8.3*
