@@ -148,7 +148,7 @@ async function logoutUser(req, res){
     }
     const refreshTokenHash = bcrypt.hash(refreshToken, 10);
     const session = await sessionModel.findOne({
-        refreshToken,
+        refreshTokenHash,
         revoked: false
     })
 
