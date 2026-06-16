@@ -1,73 +1,78 @@
-# React + TypeScript + Vite
+# Mainline Next.js Template
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Mainline is a free template built with shadcn/ui, Tailwind 4 and Next.js 15.
 
-Currently, two official plugins are available:
+- [Demo](https://mainline-nextjs-template.vercel.app/)
+- [Documentation](https://docs.shadcnblocks.com/templates/getting-started)
+- [Figma](https://www.figma.com/design/cFCLMj7DFv0sK7EVsqKeTa/Mainline?node-id=23250-13201&t=I1nAdchDpknii5Bd-1)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+![Mainline NextJS Template screenshot](./public/og-image.jpg)
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Features
+
+### Core Technology Stack
+
+- **Next.js 15** with App Router
+- **Tailwind CSS 4** for styling
+- **shadcn/ui** components
+- **TypeScript** support
+- **React 19**
+
+### Key Features
+
+- **Shadcn UI**: uses [shadcn/ui](https://ui.shadcn.com/) core UI components
+- **Theme System**: Dark/light mode with `next-themes`, compatible with [tweakcn](https://tweakcn.com)
+- **Form Handling**: React Hook Form + Zod validation
+- **Server Actions**: Next-safe-action integration for server-side logic
+- **MDX Support**: For content pages
+- **Animations**: Motion library (Framer Motion) integration
+- **ESLint/Prettier**: Pre-configured code formatting and linting
+- **Custom Fonts**: DM Sans font family included
+- **Icons**: Lucide React + React Icons libraries
+- **Styleglide Integration**: For component previews/development
+- **Responsive Design**: Mobile-friendly layout
+- **SEO Ready**: Proper metadata and OG images included
+
+### Pre-built Pages
+
+- Home/Landing page
+- About page
+- Pricing page
+- FAQ page
+- Contact page with form
+- Login/Signup pages
+
+### Blocks
+
+- Hero section
+- Logo showcase/marquee
+- Features section
+- Resource allocation section
+- Testimonials with carousel
+- Pricing table
+- FAQ with accordion
+- Footer
+- Navigation bar
+
+## Deployment
+
+Production-ready and tested for deployment on [Vercel](https://vercel.com)
+
+## Credits
+
+- Template by [shadcnblocks.com](https://shadcnblocks.com)
+- Design by [Callum Flack](https://x.com/callumflack)
+- Dev by [Yassine Zaanouni](https://x.com/YassineZaanouni)
+- Produced by [Rob Austin](https://x.com/ausrobdev)
