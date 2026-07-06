@@ -42,6 +42,13 @@ async function createOrg(req, res){
         description,
         createdBy: decoded.id // this is requird as in schema (user ID who created it)
     })
+
+    await orgMemberModel.create({
+        orgId: org._id,
+        userId: decoded.id,
+        role: 'admin'
+    })
+
     res.status(201).json({message: "new organisation created!!",
         org: {
             id: org._id,

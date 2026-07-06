@@ -47,8 +47,8 @@ async function registerUser(req, res){
         // Store refresh token in cookie
         res.cookie("refreshToken", refreshToken, {
             httpOnly: true, // client side cannot read this JS
-            secure: true,
-            sameSite: 'strict',
+            secure: process.env.NODE_ENV === 'production',
+            sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
             maxAge: 7 * 24 * 60 * 60 * 1000 
         })
 
@@ -122,14 +122,15 @@ async function loginUser(req, res){
         // Store refresh token in httpOnly cookie
         res.cookie("refreshToken", refreshToken, {
             httpOnly: true,
-            secure: true,
-            sameSite: 'strict',
+            secure: process.env.NODE_ENV === 'production',
+            sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
             maxAge: 7 * 24 * 60 * 60 * 1000 
         })
 
         res.status(200).json({
             message: "user login successful",
             user: {id: user._id, role: user.role},
+            accessToken
         })
 
     } catch (error) {
@@ -193,8 +194,8 @@ async function refreshToken(req, res){
         // Update refresh token cookie
         res.cookie('refreshToken', newRefreshToken, {
             httpOnly: true,
-            secure: true, 
-            sameSite: 'strict',
+            secure: process.env.NODE_ENV === 'production',
+            sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
             maxAge: 7 * 24 * 60 * 60 * 1000
         })
 

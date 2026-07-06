@@ -25,19 +25,19 @@ const contactInfo = [
         <div>
           <p className="">Careers</p>
           <Link
-            href="mailto:careers@example.com"
+            href="mailto:careers@flowboard.app"
             className="text-muted-foreground hover:text-foreground"
           >
-            careers@example.com
+            careers@flowboard.app
           </Link>
         </div>
         <div className="mt-1">
           <p className="">Press</p>
           <Link
-            href="mailto:press@example.com"
+            href="mailto:press@flowboard.app"
             className="text-muted-foreground hover:text-foreground"
           >
-            press@example.com
+            press@flowboard.app
           </Link>
         </div>
       </div>
@@ -51,7 +51,7 @@ const contactInfo = [
           <Facebook className="size-5" />
         </Link>
         <Link
-          href="https://x.com/ausrobdev"
+          href="https://x.com"
           className="text-muted-foreground hover:text-foreground"
         >
           <Twitter className="size-5" />

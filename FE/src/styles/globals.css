@@ -52,7 +52,7 @@
   --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
 
   --font-dm-sans: "dmSans", sans-serif;
-  --font-inter: "inter", sans-serif;
+  --font-inter: var(--font-dm-sans);
 
   --font-sans: var(--font-dm-sans), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;

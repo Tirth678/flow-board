@@ -1,78 +1,58 @@
-# Mainline Next.js Template
+# Flow Board Frontend
 
-Mainline is a free template built with shadcn/ui, Tailwind 4 and Next.js 15.
+Flow Board is a team task management app for organizations, boards, and cards.
+This frontend is built with Next.js, Tailwind CSS, and shadcn/ui components.
 
-- [Demo](https://mainline-nextjs-template.vercel.app/)
-- [Documentation](https://docs.shadcnblocks.com/templates/getting-started)
-- [Figma](https://www.figma.com/design/cFCLMj7DFv0sK7EVsqKeTa/Mainline?node-id=23250-13201&t=I1nAdchDpknii5Bd-1)
+## Local Development
 
-![Mainline NextJS Template screenshot](./public/og-image.jpg)
-
-## Getting Started
+Install dependencies:
 
 ```bash
 npm install
 ```
 
+Start the frontend:
+
 ```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+By default, the app expects the backend API at:
 
-## Features
+```bash
+http://127.0.0.1:5001/api
+```
 
-### Core Technology Stack
+To use another API URL, create a local environment file and set:
 
-- **Next.js 15** with App Router
-- **Tailwind CSS 4** for styling
-- **shadcn/ui** components
-- **TypeScript** support
-- **React 19**
+```bash
+NEXT_PUBLIC_API_URL=https://your-api-host.com/api
+```
 
-### Key Features
+## Pages
 
-- **Shadcn UI**: uses [shadcn/ui](https://ui.shadcn.com/) core UI components
-- **Theme System**: Dark/light mode with `next-themes`, compatible with [tweakcn](https://tweakcn.com)
-- **Form Handling**: React Hook Form + Zod validation
-- **Server Actions**: Next-safe-action integration for server-side logic
-- **MDX Support**: For content pages
-- **Animations**: Motion library (Framer Motion) integration
-- **ESLint/Prettier**: Pre-configured code formatting and linting
-- **Custom Fonts**: DM Sans font family included
-- **Icons**: Lucide React + React Icons libraries
-- **Styleglide Integration**: For component previews/development
-- **Responsive Design**: Mobile-friendly layout
-- **SEO Ready**: Proper metadata and OG images included
-
-### Pre-built Pages
-
-- Home/Landing page
+- Landing page
 - About page
 - Pricing page
 - FAQ page
-- Contact page with form
-- Login/Signup pages
+- Contact page
+- Login and signup pages
+- App workspace
+- Organizations, members, boards, and cards
 
-### Blocks
+## Backend Contract
 
-- Hero section
-- Logo showcase/marquee
-- Features section
-- Resource allocation section
-- Testimonials with carousel
-- Pricing table
-- FAQ with accordion
-- Footer
-- Navigation bar
+The frontend is wired to the Flow Board backend endpoints:
 
-## Deployment
-
-Production-ready and tested for deployment on [Vercel](https://vercel.com)
-
-## Credits
-
-- Template by [shadcnblocks.com](https://shadcnblocks.com)
-- Design by [Callum Flack](https://x.com/callumflack)
-- Dev by [Yassine Zaanouni](https://x.com/YassineZaanouni)
-- Produced by [Rob Austin](https://x.com/ausrobdev)
+- `POST /api/auth/register`
+- `POST /api/auth/login`
+- `POST /api/auth/logout`
+- `GET /api/org`
+- `POST /api/org/create`
+- `POST /api/org/:orgId/invite`
+- `GET /api/org/:id/members`
+- `POST /api/board/:orgId`
+- `GET /api/board/:orgId/list`
+- `POST /api/card/:boardId`
+- `GET /api/card/:boardId/list`
+- `PATCH /api/card/:cardId/status`

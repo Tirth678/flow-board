@@ -1,7 +1,7 @@
 {
-  "name": "mainline-nextjs-template",
+  "name": "flow-board-frontend",
   "version": "1.2.0",
-  "author": "Shadcnblocks.com",
+  "author": "Flow Board Team",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
