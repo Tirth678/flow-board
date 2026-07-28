@@ -24,7 +24,7 @@
     "express-validator": "^7.0.0",
     "jsonwebtoken": "^9.0.0",
     "mailtrap": "^3.0.0",
-    "mongoose": "^7.5.0",
+    "mongoose": "^7.8.10",
     "morgan": "^1.10.0",
     "helmet": "^7.0.0",
     "compression": "^1.7.4",
