@@ -12,23 +12,23 @@
     "collaboration",
     "task-management"
   ],
-  "author": "Flow Board Team",
+  "author": "Tirth S. Pandya",
   "license": "ISC",
   "description": "Collaborative project management platform with Kanban boards",
   "dependencies": {
     "bcrypt": "^5.1.0",
+    "compression": "^1.7.4",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.22.2",
+    "express-rate-limit": "^6.10.0",
     "express-validator": "^7.0.0",
+    "helmet": "^7.0.0",
     "jsonwebtoken": "^9.0.0",
     "mailtrap": "^3.0.0",
     "mongoose": "^7.5.0",
     "morgan": "^1.10.0",
-    "helmet": "^7.0.0",
-    "compression": "^1.7.4",
-    "express-rate-limit": "^6.10.0",
     "uuid": "^14.0.0"
   },
   "devDependencies": {
