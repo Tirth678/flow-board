@@ -21,7 +21,7 @@
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
-    "express": "^4.22.2",
+    "express": "^5.2.1",
     "express-rate-limit": "^6.10.0",
     "express-validator": "^7.0.0",
     "helmet": "^7.0.0",
